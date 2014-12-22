@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<title>Wicked Wiki</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="/static/normalize.css">
+	<link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+<body>
+	<div class="main-header">
+		<div class="row">
+			<h1 class="main-logo">Wicked Wiki</h1>
+			<ul class="main-nav">
+				<li><a href="/">Home</a></li>
+				{% if user %}
+					<li><a href="/_edit{{page_path}}">Edit</a></li>
+					<li><a href="/_history{{page_path}}">History</a></li>
+					<li><a href="/logout">Logout</a></li>
+				{% else %}
+					<li><a href="/signup">Signup</a></li>
+					<li><a href="/login">Login</a></li>
+				{% endif %}
+			</ul>
+		</div>
+	</div>
+	<div id="main-content">
+
+		<div class="row">
+			{% if user %}
+				<h4>Welcome to Wicked Wiki - How to use</h4>
+				<div class="half-block left">
+					<p>Create a new page by adding on to the url address!</p>
+					<p>Example: ethereal-terra-645.appspot.com/newpage </p>
+				</div>
+				<div class="half-block right">
+					<p> Click the "Edit" link to modify an existing page</p>
+					<p>Click the "History" link to view the pages history of edits</p>
+				</div>
+				<hr>
+			{% else %}
+				<h1 class="callout">-- Welcome to Wicked Wiki --</h1>
+			{% endif %}
+		</div>
+		{% block content %}
+		{% endblock %}
+	</div>
+</body>
+</html>

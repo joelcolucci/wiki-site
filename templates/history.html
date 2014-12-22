@@ -1,0 +1,26 @@
+{% extends "template.html" %}
+{% block content %}
+
+<div class="row">
+	<table>
+		<caption>Page History</caption>
+		<thead>
+			<tr>
+				<th scope="col">Date Created</th>
+				<th scope="col">Content</th>
+				<th scope="col" colspan="2">Controls</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for page in pages %}
+				<tr>
+					<td>{{page.created.strftime('%m-%d-%Y')}}</td>
+					<td>{{page.content}}</td>
+					<td><a href="{{page_path}}?v={{page.key().id()}}">View</a></td>
+					<td><a href="/_edit{{page_path}}?v={{page.key().id()}}">Edit</a></td>
+				</tr>
+			{% endfor %}
+		<tbody>
+</div>
+
+{% endblock %}
