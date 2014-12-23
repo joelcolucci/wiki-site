@@ -4,6 +4,11 @@
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
+body {
+  min-height: 2000px;
+  padding-top: 70px;
+}
+
 a {
 	text-decoration: none;
 	color: #333;
