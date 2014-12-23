@@ -1,14 +1,15 @@
 /* Page Styles
 --------------------------------------*/
-* {
+/** {
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
-}
+}*/
 body {
   min-height: 2000px;
   padding-top: 70px;
 }
 
+/*
 a {
 	text-decoration: none;
 	color: #333;
@@ -21,8 +22,9 @@ a {
 .callout {
 	text-align: center;
 }
-/* Header and Navigation
---------------------------------------*/
+
+
+
 .main-header {
 	padding: 5px;
 	background: #3a3a3a;
@@ -52,8 +54,9 @@ a {
 	margin: 6px 0 0;
 }
 
-/* Instructions
---------------------------------------*/
+
+
+
 .half-block {
 	display: inline-block;
 	width: 50%;
@@ -65,8 +68,10 @@ a {
 h4 {
 	margin: 5px 0;
 }
-/* Form Style and Layout
---------------------------------------*/
+
+
+
+
 .vertical-form {
 	width: 275px;
 	margin: 0 auto;
@@ -79,15 +84,17 @@ h4 {
 .vertical-form input {
 	width: 275px;
 }
-/* Textarea
---------------------------------------*/
+
+
+
 textarea {
 	display: block;
 	height: 300px;
 	width: 500px;
 }
-/* Table Styles
---------------------------------------*/
+
+
+
 table {
 	max-width: 960px;
 	margin: 3px auto;
@@ -115,17 +122,21 @@ td {
 table a {
 	color: #000;
 }
-/* Error
---------------------------------------*/
+
+
+
 .error {
 	color: #F00;
 	font-weight: 500;
 }
-/* Clearfix
---------------------------------------*/
+
+
+
 .clearfix,
 .row {
 	content: '';
 	display: table;
 	clear: both;
 }
+
+*/
