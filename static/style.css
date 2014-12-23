@@ -4,3 +4,8 @@ body {
   min-height: 2000px;
   padding-top: 70px;
 }
+
+.main-logo {
+	font-family: 'Lobster', cursive;
+	font-size: 26px;
+}
