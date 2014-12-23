@@ -2,15 +2,17 @@
 {% block content %}
 
 <div class="row">
-	<div class="vertical-form">
-		<form method="post">
-			<label for="username">Username</label>
-			<input type="text" id="username" name="username">
-			<label for="password">Password</label>
-			<input type="password" id="password" name="password">
-			<button type="submit">Login</button>
-			<div class="error">{{error}}</div>
-		</form>
+	<div class="col-md-12">
+		<div class="vertical-form">
+			<form method="post">
+				<label for="username">Username</label>
+				<input type="text" id="username" name="username">
+				<label for="password">Password</label>
+				<input type="password" id="password" name="password">
+				<button type="submit">Login</button>
+				<div class="error">{{error}}</div>
+			</form>
+		</div>
 	</div>
 </div>
 

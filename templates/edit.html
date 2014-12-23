@@ -1,9 +1,11 @@
 {% extends "template.html" %}
 {% block content %}
 <div class="row">
-	<form method="post">
-		<textarea class="lg-edit" id="content" name="content">{{content}}</textarea>
-		<button type="submit">Submit</button><span class="error">{{error_content}}</span>
-	</form>
+  <div class="col-md-12">
+  	<form method="post">
+  		<textarea class="lg-edit" id="content" name="content">{{content}}</textarea>
+  		<button type="submit">Submit</button><span class="error">{{error_content}}</span>
+  	</form>
+  </div>
 </div>
 {% endblock %}

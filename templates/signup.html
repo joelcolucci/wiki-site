@@ -2,22 +2,24 @@
 {% block content %}
 
 <div class="row">
-	<div class="vertical-form">
-		<form method="post">
-			<label for="username">Username</label>
-			<input type="text" id="username" name="username" value="{{username}}">
-			<div class="error">{{error_username}}</div>
-			<label for="password">Password</label>
-			<input type="password" id="password" name="password">
-			<div class="error">{{error_password}}</div>
-			<label for="verify">Verify Password</label>
-			<input type="password" id="verify" name="verify">
-			<div class="error">{{error_verify}}</div>
-			<label for="email">Email(optional)</labeL>
-			<input type="text" id="email" name="email" value="{{email}}">
-			<div class="error">{{error_email}}</div>
-			<button type="submit">Submit</button>
-		</form>
+	<div class="col-md-12">
+		<div class="vertical-form">
+			<form method="post">
+				<label for="username">Username</label>
+				<input type="text" id="username" name="username" value="{{username}}">
+				<div class="error">{{error_username}}</div>
+				<label for="password">Password</label>
+				<input type="password" id="password" name="password">
+				<div class="error">{{error_password}}</div>
+				<label for="verify">Verify Password</label>
+				<input type="password" id="verify" name="verify">
+				<div class="error">{{error_verify}}</div>
+				<label for="email">Email(optional)</labeL>
+				<input type="text" id="email" name="email" value="{{email}}">
+				<div class="error">{{error_email}}</div>
+				<button type="submit">Submit</button>
+			</form>
+		</div>
 	</div>
 </div>
 
