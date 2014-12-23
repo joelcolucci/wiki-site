@@ -33,7 +33,7 @@
 						<li><a href="/login">Login</a></li>
 					{% endif %}
 				</ul>
-			</div>
+			</div> <!-- End navbar collapse -->
 		</div> <!-- End container -->
 	</nav>
 
@@ -55,27 +55,39 @@
 			</ul>
 		</div>
 	</div> -->
-	<div id="main-content">
+	<div class="container">
 
-		<div class="row">
-			{% if user %}
-				<h4>Welcome to Wicked Wiki - How to use</h4>
-				<div class="half-block left">
+		{% if user %}
+			<div class="row">
+				<div class="col-md-12">
+					<h4>Welcome to Wicked Wiki - How to use</h4>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
 					<p>Create a new page by adding on to the url address!</p>
 					<p>Example: ethereal-terra-645.appspot.com/newpage </p>
 				</div>
-				<div class="half-block right">
+				<div class="col-md-6">
 					<p> Click the "Edit" link to modify an existing page</p>
 					<p>Click the "History" link to view the pages history of edits</p>
 				</div>
 				<hr>
-			{% else %}
-				<h1 class="callout">-- Welcome to Wicked Wiki --</h1>
-			{% endif %}
-		</div>
+			</div>
+		{% else %}
+			<div class="row">
+				<div class="col-md-12">
+					<h1 class="callout">-- Welcome to Wicked Wiki --</h1>
+				</div>
+			</div>
+		{% endif %}
+	</div>
+	<div class="container">
+
 		{% block content %}
 		{% endblock %}
-	</div>
+
+	</div> <!-- End .container -->
 	<script src="static/jquery-1.11.2.min.js"></script>
 	<script src="static/bootstrap.min.js"></script>
 </body>
