@@ -3,8 +3,12 @@
 <div class="row">
   <div class="col-md-12">
   	<form method="post">
-  		<textarea class="lg-edit" id="content" name="content">{{content}}</textarea>
-  		<button type="submit">Submit</button><span class="error">{{error_content}}</span>
+      <div class="form-group">
+  		  <textarea class="form-control" rows="5" id="content" name="content">{{content}}</textarea>
+      </div>
+      <div class="text-center">
+  		  <button type="submit" class="btn btn-primary">Submit</button><span class="error">{{error_content}}</span>
+      </div>
   	</form>
   </div>
 </div>
