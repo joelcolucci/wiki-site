@@ -37,24 +37,6 @@
 		</div> <!-- End container -->
 	</nav>
 
-
-
-<!-- 	<div class="main-header">
-		<div class="row">
-			<h1 class="main-logo">Wicked Wiki</h1>
-			<ul class="main-nav">
-				<li><a href="/">Home</a></li>
-				{% if user %}
-					<li><a href="/_edit{{page_path}}">Edit</a></li>
-					<li><a href="/_history{{page_path}}">History</a></li>
-					<li><a href="/logout">Logout</a></li>
-				{% else %}
-					<li><a href="/signup">Signup</a></li>
-					<li><a href="/login">Login</a></li>
-				{% endif %}
-			</ul>
-		</div>
-	</div> -->
 	<div class="container">
 
 		{% if user %}
@@ -64,20 +46,24 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-6">
+				<div class="col-md-6 text-muted">
 					<p>Create a new page by adding on to the url address!</p>
-					<p>Example: ethereal-terra-645.appspot.com/newpage </p>
+					<p>Example: wicked-wiki.appspot.com/newpage </p>
 				</div>
-				<div class="col-md-6">
-					<p> Click the "Edit" link to modify an existing page</p>
-					<p>Click the "History" link to view the pages history of edits</p>
+				<div class="col-md-6 text-muted">
+					<p>Click the "Edit" link to modify an existing page</p>
+					<p>Click the "History" link to view the page's edit history</p>
 				</div>
-				<hr>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<hr>
+				</div>
 			</div>
 		{% else %}
 			<div class="row">
 				<div class="col-md-12 text-center">
-					<h1 class="callout">Welcome to Wicked Wiki</h1>
+					<h1>Welcome to Wicked Wiki</h1>
 				</div>
 			</div>
 		{% endif %}
