@@ -113,11 +113,25 @@ class Page(db.Model):
 	"""datastore data model for page content"""
 	content = db.StringProperty(required = True, multiline = True)
 	created = db.DateTimeProperty(auto_now_add = True)
+	name = db.StringProperty(required = False)
 
 	@classmethod
 	def page_key(cls, name = 'default'):
 		"""return valid key to be used as parent/ancestor id"""
 		return db.Key.from_path('pages', name)
+
+	@classmethod
+	def get_page_list(cls, query):
+		""" Retrieve unique list of pages """
+		page_list = []
+
+		for page in query:
+			page_name = page.name
+			if page_name not in page_list and page_name != "/":
+				page_list.append(page_name)
+
+		return page_list
+
 	
 
 ### URL HANDLERS
@@ -298,7 +312,7 @@ class EditPage(ParentHandler):
 				p.content = content
 			else:
 				#If no query string create new Page entity
-				p = Page(parent = ancestor_id, content = content)
+				p = Page(parent = ancestor_id, content = content, name = url_path)
 
 			p.put()
 			self.redirect('//%s' % parent)
@@ -333,17 +347,24 @@ class PageGenerator(ParentHandler):
 			record = db.get(key)
 
 			if record:
-				self.render("page.html", content = record.content, page_path = parent)
+				self.render("page.html", content = record.content,
+					page_path = parent)
 				return
 			self.write("no record")
 			return
 
-		#Get all Page entities based on ancestor
+		#Get all Page entities
 		q = Page.all()
+
+		#Get names/paths of all created pages
+		page_list = Page.get_page_list(q)
+
+		#Get Page history by filtering on ancestor
 		pages = q.ancestor(ancestor_id).order('-created')
-		
+
 		if pages.count() > 0:
-			self.render("page.html", content = pages[0].content, page_path = parent)
+			self.render("page.html", content = pages[0].content,
+				page_path = parent, page_list = page_list)
 		else:
 			self.redirect('/_edit' + parent)
 

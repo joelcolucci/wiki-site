@@ -8,8 +8,9 @@
   <div class="col-md-3 col-md-offset-1 blog-sidebar">
     <div class="sidebar-module sidebar-module-inset">
       <h4>Popular Pages</h4>
-      <a class="page-link" href="/newenglandpatriots">New England Patriots</a>
-      <a class="page-link" href="/booksihaveread">Books I have Read</a>
+      {% for page in page_list %}
+        <a class="page-link" href="{{page}}">{{page}}</a>
+      {% endfor %}
     </div>
   </div>
 </div>
