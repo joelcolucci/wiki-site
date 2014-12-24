@@ -10,6 +10,9 @@ body {
 	font-size: 26px;
 }
 
+.page-link {
+  display: block;
+}
 
 /*------------- Source: http://getbootstrap.com/examples/blog/# ----*/
 h1, .h1,
