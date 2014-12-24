@@ -2,8 +2,14 @@
 {% block content %}
 
 <div class="row">
-  <div class="col-md-12">
+  <div class="col-md-8 blog-main">
 	 {{content|safe}}
+  </div>
+  <div class="col-md-3 col-md-offset-1 blog-sidebar">
+    <div class="sidebar-module sidebar-module-inset">
+      <h4>Current Pages</h4>
+      <a href="#">New England Patriots</a>
+    </div>
   </div>
 </div>
 
